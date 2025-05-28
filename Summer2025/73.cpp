@@ -1,4 +1,9 @@
-#include "common.h"
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+#include <math.h>
+using namespace std;
 
 class Solution {
 public:
