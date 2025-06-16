@@ -1,0 +1,30 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+class Solution {
+public:
+    string triangleType(vector<int>& nums) {
+        stable_sort(nums.begin(), nums.end());
+        //Triangle inequality formula
+        bool validTriangle = (nums[0] + nums[1] > nums[2]) && (nums[0] + nums[2] > nums[1]) && (nums[1] + nums[2] > nums[0]);
+        if(validTriangle) {
+            if(nums[0] == nums[1] && nums[1] == nums[2]) {
+                return "equilateral";
+            }
+            else if(nums[0] == nums[1] || nums[1] == nums[2] || nums[2] == nums[0]) {
+                return "isosceles";
+            }
+            else {
+                return "scalene";
+            }
+        }
+        else {
+            return "none";
+        }
+        return "";
+    }
+};
