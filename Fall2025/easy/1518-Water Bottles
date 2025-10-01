@@ -1,0 +1,19 @@
+using namespace std;
+
+class Solution {
+public:
+    int numWaterBottles(int numBottles, int numExchange, int empty = 0) const {
+        int ans = 0;
+        int empty = 0;
+        while(numBottles > 0) {
+            numBottles--;
+            empty++;
+            ans++;
+            if(empty == numExchange) {
+                empty = 0;
+                numBottles++;
+            };
+        }
+        return ans;
+    }
+};
